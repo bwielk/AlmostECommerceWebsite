@@ -1,22 +1,38 @@
 import React from 'react'
 
 export class Home extends React.Component {
+
+  constructor(props){
+    super();
+    this.state = {
+      age: props.initAge,
+      counter: 0
+    };
+  }
+
+  onMakeOlder(){
+    if(this.state.age > 50){
+      this.setState({
+        age: 0,
+        counter: this.state.counter + 1
+      });
+    }else{
+      this.setState({
+        age: this.state.age + 3,
+        counter: this.state.counter + 1
+      });
+    }
+  }
+
   render(){
     console.log(this.props);
     return(
       <div>
-        <p>In a new component</p>
-        <h1>Your name is {this.props.name}</h1>
-        <h1>Your friend's name is {this.props.user.name} 
-        and she is {this.props.user.age}</h1>
-        <div>
-        <h1>Her hoobbies are : </h1>
-        <ul>
-          {this.props.user.hobbies.map ((hobby, index) => <li key = {index}>{hobby}</li>)}
-        </ul>
-        </div>
-        <hr/>
-        {this.props.children}
+      <p>In a new component</p>
+      <h1>Your name is {this.props.name} and your age is {this.state.age}</h1>
+      <h1>You have clicked {this.state.counter} times</h1>
+      <hr/>
+      <button onClick = {this.onMakeOlder.bind(this)}>Make me older!</button>
       </div>
       );
   }
@@ -24,9 +40,7 @@ export class Home extends React.Component {
 
 Home.propTypes = {
   name: React.PropTypes.string,
-  age: React.PropTypes.number,
-  user: React.PropTypes.object,
-  children: React.PropTypes.isRequired
+  age: React.PropTypes.number
 };
 
 export default Home;
