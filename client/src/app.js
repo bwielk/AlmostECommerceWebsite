@@ -6,12 +6,18 @@ import { render } from 'react-dom'
 import {Router, Route, IndexRoute, hashHistory} from 'react-router'
 
 class App extends React.Component {
-  
+  render() {
+    return (
+      <div className = "app-style">
+        <h1> Lorem Ipsum</h1>
+      </div>
+      )
+  }
 }
 
 window.onload = () => {
   render(
-  <h1>App runs!</h1>
+  <App/>
   // render(
   //   <Router history = {hashHistory}>
   //     <Route path ="/" component={Main}>
@@ -20,7 +26,7 @@ window.onload = () => {
   //       <Route path = "home" component = {Home}></Route>
   //     </Route> 
   //   </Router>
-    ,
-    document.getElementById('app')
+  ,
+  document.getElementById('app')
   )
 }
