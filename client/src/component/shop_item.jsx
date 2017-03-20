@@ -1,4 +1,5 @@
 import React from 'react'
+import SizeOptions from './size_options.jsx'
 
 class ShopItem extends React.Component{
 
@@ -6,8 +7,7 @@ class ShopItem extends React.Component{
     super();
     this.state = {
       description: "A fab top",
-      price: 12,
-      stock: 20,
+      price: 10,
       stockperSize: {
         S: 3,
         M: 8,
@@ -20,28 +20,28 @@ class ShopItem extends React.Component{
 
   onHandleBuy(){
     this.props.buyMethod(this.state.price)
-    if(this.state.stock == 0){
+    if(this.state.stockperSize.S == 0){
       <p className = "shop">No more items available</p>
     }else{
       this.setState({
-        stock: this.state.stock - 1
+        stockperSize:{S: this.state.stockperSize.S - 1}
       })
     }
   }
 
   stockFormat () {
     let output
-    if (this.state.stock == 0) {
+    if (this.state.stockperSize.S == 0) {
       output = <p className = "shop">No more items available</p>
     } else {
-      output = <p>{this.state.stock} items left </p>
+      output = <p>{this.state.stockperSize.S} items left </p>
     }
     return output
   }
 
   stockFormatButton() {
     let button
-    if (this.state.stock == 0) {
+    if (this.state.stockperSize.S == 0) {
       button = <p className = "shop">Out of stock</p>
     } else {
       button = <button onClick = {this.onHandleBuy.bind(this)}>BUY</button>

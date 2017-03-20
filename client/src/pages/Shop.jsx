@@ -21,10 +21,9 @@ class Shop extends React.Component {
   render(){
     return(
       <div className = "shop">
-      <ShopItem buyMethod = {this.buy.bind(this)}/>
-      <p>{this.state.total}</p>
+      <p>Total to pay:{this.state.total}</p>
       <p>You have bought {this.state.amount} items</p> 
-
+      <ShopItem buyMethod = {this.buy.bind(this)}/>
       </div>
       )
   }

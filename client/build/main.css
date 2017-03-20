@@ -9,16 +9,17 @@ body{
 }
 
 .product {
-  height: 200px;
-  width: 120px;
+  height: 300px;
+  max-width: 220px;
   text-align: center;
   font-family: arial;
-  font-size: 120%;
+  font-size: 80%;
   color: red;
+  background-color: white;
 }
 
 .product img{
-  width: 100px;
+  width: 200px;
   max-height:150px;
 }
 
