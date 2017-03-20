@@ -1,3 +1,29 @@
 .app-style {
   color: red;
 }
+
+body{
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/disp/496e4a47888099.5887f20119ca4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.product {
+  height: 200px;
+  width: 120px;
+  text-align: center;
+  font-family: arial;
+  font-size: 120%;
+  color: red;
+}
+
+.product img{
+  width: 100px;
+  max-height:150px;
+}
+
+.shop {
+  color: red;
+  font-family: arial;
+  font-size: 120%;
+}
