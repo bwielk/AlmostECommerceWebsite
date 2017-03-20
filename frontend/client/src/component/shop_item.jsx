@@ -56,6 +56,7 @@ class ShopItem extends React.Component{
       <img src = {this.state.url} />
       {this.stockFormat()}
       <p>{this.state.description}</p>
+      <SizeOptions />
       <h1>£{this.state.price}</h1>
       {this.stockFormatButton()}
       </div>

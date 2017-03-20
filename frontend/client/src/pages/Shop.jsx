@@ -1,5 +1,6 @@
 import React from 'react'
 import ShopItem from '../component/shop_item.jsx'
+import {Link} from 'react-router'
 
 class Shop extends React.Component {
 
@@ -21,6 +22,7 @@ class Shop extends React.Component {
   render(){
     return(
       <div className = "shop">
+      <Link to = 'shop/payment'>PAY</Link>
       <p>Total to pay:{this.state.total}</p>
       <p>You have bought {this.state.amount} items</p> 
       <ShopItem buyMethod = {this.buy.bind(this)}/>

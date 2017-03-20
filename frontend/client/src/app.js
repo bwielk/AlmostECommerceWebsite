@@ -5,6 +5,7 @@ import Home from './pages/Home.jsx'
 import Shop from './pages/Shop.jsx'
 import Main from './pages/Main.jsx'
 import Admin from './pages/Admin.jsx'
+import Payment from './pages/Payment.jsx'
 
 window.onload = () => {
   render(
@@ -14,6 +15,7 @@ window.onload = () => {
             <Route path ='home' component = {Home} />
             <Route path ='shop' component = {Shop} />
             <Route path ='admin123' component = {Admin} />
+            <Route path = 'shop/payment' component = {Payment} />
         </Route>
     </Router>, 
     document.getElementById('app')
